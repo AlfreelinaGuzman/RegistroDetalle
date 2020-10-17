@@ -1,0 +1,61 @@
+<Window x:Class="RegistroDetalle.UI.Registro.rMoras"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistroDetalle.UI.Registro"
+        mc:Ignorable="d"
+        Title="Registro de Moras" Height="250" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+	<Grid>
+    
+		<StackPanel Orientation= "Vertical" Margin="10,10,10,10">
+        <StackPanel Orientation= "Horizontal">
+    <!--CiudadID-->
+        <Label Content= "MorasID" HorizontalAlignment="Left" />
+        <TextBox x:Name= "MorasIDTextBox" Width="100" Text= "{Binding MorasID}" Height= "20" HorizontalAlignment= "Left"/>
+           
+    <!--Boton Buscar-->
+        <Button x:Name ="BuscarButton" Margin="10,0" Width = "70" Height = "30" >
+             <StackPanel Orientation= "Horizontal">       
+                <Image Source= "/Imagenes/Buscar.png" Width="20" Height= "20"/>  
+                <Label Content=" Buscar"/>
+                </StackPanel>
+        </Button>  
+        </StackPanel>
+
+    <!--Fecha-->
+        <Label Content="Fecha: " HorizontalAlignment="Left" />
+        <DatePicker x:Name= "FechaDatePickerTextBox" Width="200" Text="{Binding Fecha}" Height= "20" HorizontalAlignment="Left"/>
+   
+    <!--Valor-->
+        <Label Content= "Valor"/>
+        <TextBox x:Name= "ValorTextBox" Width="200" Text= "{Binding Valor}" Height= "20" HorizontalAlignment= "Left"/>
+    
+<StackPanel Orientation= "Horizontal" Margin="0,10">
+    <!-- Boton Nuevo-->
+        <Button x:Name ="NuevoButton"  Width = "80" Height = "30" >
+        <StackPanel Orientation= "Horizontal">
+        <Image Source= "/Imagenes/Nuevo.png" Width="20" Height= "20"/>  
+        <Label Content=" Nuevo"/>
+        </StackPanel>
+        </Button>
+
+    <!-- Boton Guardar-->
+        <Button x:Name ="GuardarButton" Margin="10,0" Width = "80" Height = "30" >
+        <StackPanel Orientation= "Horizontal">
+        <Image Source= "/Imagenes/Guardar.png" Width="20" Height= "20"/> 
+        <Label Content=" Guardar"/>
+        </StackPanel>
+        </Button>   
+
+    <!-- Boton Eliminar-->
+        <Button x:Name ="EliminarButton" Margin="0,0" Width = "80" Height = "30">
+        <StackPanel Orientation= "Horizontal">
+        <Image Source= "/Imagenes/Eliminar.png" Width="20" Height= "20"/>  
+        <Label Content=" Eliminar"/>
+        </StackPanel>
+        </Button>   
+    </StackPanel>   
+    </StackPanel>
+	</Grid>
+</Window>

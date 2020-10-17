@@ -1,0 +1,26 @@
+﻿<Window x:Class="RegistroDetalle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistroDetalle"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <StackPanel>
+            <Menu Height = "20" VerticalAlignment="Top">
+        
+                <MenuItem Header= "Registros" HorizontalAlignment="Left" Margin="80,0,0,0" VerticalAlignment="Top">
+                    <MenuItem x:Name="Registrar_Persona" Header="Registrar Persona" Click= "RegistrarPersonas_Click"/>
+                    <MenuItem x:Name="Registrar_Prestamo" Header="Registrar Prestamo" Click= "RegistrarPrestamo_Click"/>
+                    <MenuItem x:Name="Registrar_Moras" Header=" Registrar Mora" Click= "RegistrarMoras_Click" />
+                    </MenuItem>
+
+                <MenuItem Header= "Consultas" HorizontalAlignment="Left" Margin="90,0,0,0" VerticalAlignment="Top">
+                 <!--   <MenuItem x:Name="Consultar_Persona" Header="Consultar Persona" Click="Consulta_Personas_Click"/>
+                    <MenuItem x:Name="Consultar_Prestamo" Header="Consultar Prestamo" Click="Consulta_Prestamo_Click"/>-->
+                </MenuItem>
+            </Menu>
+        </StackPanel>    
+    </Grid>
+</Window>

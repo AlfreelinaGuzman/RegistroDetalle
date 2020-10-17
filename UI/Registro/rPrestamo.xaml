@@ -1,0 +1,55 @@
+<Window x:Class="RegistroDetalle.UI.Registro.rPrestamo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistroDetalle.UI.Registro"
+        mc:Ignorable="d"
+        Title="Registrar Prestamo" Height="450" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+
+     <Label Content="PrestamoID: " HorizontalAlignment="Left" Margin="30,89,0,0" VerticalAlignment="Top"/>
+     <TextBox x:Name="PrestamoIDTextBox" Width="60" Text="{Binding ID}" Height= "20" 
+     HorizontalAlignment="Left" Margin="140,89,0,0" VerticalAlignment="Top"/>
+
+     <Label Content="Fecha: " HorizontalAlignment="Left" Margin="30,119,0,0" VerticalAlignment="Top"/>
+     <DatePicker Width="200" Text="{Binding Fecha}" Height= "20" HorizontalAlignment="Left"
+      Margin="140,119,0,0" VerticalAlignment="Top"/>
+
+     <Label Content="PersonaID: " HorizontalAlignment="Left" Margin="30,149,0,0" VerticalAlignment="Top"/>
+     <TextBox x:Name="PersonaIDTextBox" Width="200" Text="{Binding PersonaID}" Height= "20" 
+     HorizontalAlignment="Left" Margin="140,149,0,0" VerticalAlignment="Top"/>
+
+     <Label Content="Concepto: " HorizontalAlignment="Left" Margin="30,179,0,0" VerticalAlignment="Top"/>
+     <TextBox x:Name="ConceptoTextBox" Width="200" Text="{Binding Concepto}" Height= "20" 
+     HorizontalAlignment="Left" Margin="140,179,0,0" VerticalAlignment="Top"/>
+
+     <Label Content="Monto: " HorizontalAlignment="Left" Margin="30,209,0,0" VerticalAlignment="Top"/>
+     <TextBox x:Name="MontoTextBox" Width="200" Text="{Binding Monto}" Height= "20" HorizontalAlignment="Left"
+      Margin="140,209,0,0" VerticalAlignment="Top"/>
+
+     <Label Content="Balance: " HorizontalAlignment="Left" Margin="30,239,0,0" VerticalAlignment="Top"/>
+     <TextBox x:Name="BalanceTextBox" Width="200" Text="{Binding Balance}" Height= "20" 
+     HorizontalAlignment="Left" Margin="140,239,0,0" VerticalAlignment="Top"/>
+     
+     
+     
+<!--Boton Buscar-->
+    <Button x:Name ="BuscarButton" Margin="100,-230,0,0" Width = "80" Height = "40" Content=" Buscar" Click ="BuscarButton_Click" />
+    <Image Source= "/Imagenes/Buscar.png" Width="20" Height= "20"/>    
+
+<!-- Boton Nuevo-->
+    <Button x:Name ="NuevoButton" Margin="-300,160,0,0" Width = "80" Height = "40" Content=" Nuevo" Click ="NuevoButton_Click"  />
+    <Image Source= "/Imagenes/Nuevo.png" Width="20" Height= "20"/>  
+
+<!-- Boton Guardar-->
+    <Button x:Name ="GuardarButton" Margin="-100,160,0,0" Width = "80" Height = "40" Content=" Guardar" Click ="GuardarButton_Click" />
+    <Image Source= "/Imagenes/Guardar.png" Width="20" Height= "20"/> 
+
+ 
+<!-- Boton Eliminar-->
+    <Button x:Name ="EliminarButton" Margin="100,160,0,0" Width = "80" Height = "40" Content=" Eliminar" Click ="EliminarButton_Click" />
+    <Image Source= "/Imagenes/Eliminar.png" Width="20" Height= "20"/> 
+
+    </Grid>
+</Window>
