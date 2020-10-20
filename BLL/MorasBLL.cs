@@ -12,7 +12,6 @@ namespace RegistroDetalle.BLL
 {
     public class MorasBLL
     {
-        public static int BuscarBuscar { get; internal set; }
 
         public static bool Guardar(Moras moras){
             bool paso = false;

@@ -76,5 +76,6 @@ namespace RegistroDetalle.UI.Registro
             }
         }
 
+
     }
 }

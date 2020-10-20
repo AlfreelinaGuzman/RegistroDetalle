@@ -37,18 +37,18 @@ namespace RegistroDetalle.UI.Registro
             MorasIDTextBox.Text = "0";
             FechaDatePickerTextBox.Text = Convert.ToString(DateTime.Now);
 
-          //  TotalTextBox_TextChanged.ItemsSouce = new List<MorasDetalle>();
+          // TotalTextBox_TextChanged.ItemsSouce = new List<MorasDetalle>();
             Actualizar();
         }
 
-           private void Actualizar()
+           private void Actualizar() 
         {
             this.DataContext = null;
             this.DataContext = moras;
         }
 
         private bool ExisteDB(){
-            moras= MorasBLL.Buscar =(Convert.ToInt32(MorasIDTextBox.Text));
+            moras= MorasBLL.Buscar(Convert.ToInt32(MorasIDTextBox.Text));
             return (moras != null);
         }
 
@@ -97,6 +97,21 @@ namespace RegistroDetalle.UI.Registro
             {
                 MessageBox.Show("No se encontro");
             }
+        }
+
+        private void AgregarButton_Click(object sender, RoutedEventArgs e){
+            moras.MorasDetalle.Add(new MorasDetalle(Convert.ToInt32(MorasIDTextBox.Text), Convert.ToInt32(PrestamoIDTextBox.Text),
+            Convert.ToInt32(ValorTextBox.Text)));
+
+            MorasIDTextBox.Clear();
+            PrestamoIDTextBox.Clear();
+            ValorTextBox.Clear();
+        }
+
+        private void RemoverButton_Click(object sender, RoutedEventArgs e)
+        {
+            moras.MorasDetalle.RemoveAt(DetalleDataGrid.FrozenColumnCount);
+            Actualizar();
         }
 
     }

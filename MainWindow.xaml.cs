@@ -25,12 +25,12 @@ namespace RegistroDetalle
         {
             InitializeComponent();
         }
-        private void RegistrarPersonas_Click(object sender, RoutedEventArgs e)
+
+          private void RegistrarPersonas_Click(object sender, RoutedEventArgs e)
         {
             rPersonas ventana = new rPersonas();
             ventana.Show();
         }
-
           private void  RegistrarPrestamo_Click(object sender, RoutedEventArgs e)
         {
             rPrestamo ventana = new rPrestamo();
@@ -44,5 +44,5 @@ namespace RegistroDetalle
         }
     }
 
-    
+            
 }

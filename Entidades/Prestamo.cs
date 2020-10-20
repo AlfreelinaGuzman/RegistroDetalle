@@ -12,5 +12,6 @@ namespace RegistroDetalle.Entidades
         public string Concepto { get; set; }
         public decimal Monto { get; set; }
         public decimal Balance { get; set; }
+        public float Mora { get; set; }
     }
 }

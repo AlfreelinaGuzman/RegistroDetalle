@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegistroDetalle.UI.Registro"
         mc:Ignorable="d"
-        Title="Registrar Prestamo" Height="450" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        Title="Registrar Prestamo" Height="450" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
 
      <Label Content="PrestamoID: " HorizontalAlignment="Left" Margin="30,89,0,0" VerticalAlignment="Top"/>
@@ -30,9 +30,7 @@
 
      <Label Content="Balance: " HorizontalAlignment="Left" Margin="30,239,0,0" VerticalAlignment="Top"/>
      <TextBox x:Name="BalanceTextBox" Width="200" Text="{Binding Balance}" Height= "20" 
-     HorizontalAlignment="Left" Margin="140,239,0,0" VerticalAlignment="Top"/>
-     
-     
+     HorizontalAlignment="Left" Margin="140,239,0,0" VerticalAlignment="Top" />     
      
 <!--Boton Buscar-->
     <Button x:Name ="BuscarButton" Margin="100,-230,0,0" Width = "80" Height = "40" Content=" Buscar" Click ="BuscarButton_Click" />

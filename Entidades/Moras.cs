@@ -10,7 +10,7 @@ namespace RegistroDetalle.Entidades{
         public DateTime Fecha { get; set; }
         public decimal Total { get; set; }
 
-        [ForeignKey("Mora Id")]
+        [ForeignKey("MoraId")]
         public virtual List<MorasDetalle> MorasDetalle {get; set;} 
 
         public Moras()

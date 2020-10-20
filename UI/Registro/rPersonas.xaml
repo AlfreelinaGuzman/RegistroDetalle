@@ -5,33 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegistroDetalle.UI.Registro"
         mc:Ignorable="d"
-        Title="Registrar Personas" Height="450" Width="800"  WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        Title="Registrar Personas" Height="350" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
 
      <Label Content="PersonaID: " HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
-     <TextBox x:Name="PersonaIDTextBox" Width="60" Text="{Binding PersonaID}" Height= "20" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top"/>
+     <TextBox x:Name="PersonaIDTextBox" Width="60" Text="{Binding PersonaID}" Height= "20" HorizontalAlignment="Left" Margin="70,0,0,0" VerticalAlignment="Top"/>
 
      <Label Content="Nombres: " HorizontalAlignment="Left" Margin="0,30,0,0" VerticalAlignment="Top"/>
      <TextBox x:Name="NombresTextBox" Width="200" Text="{Binding Nombres}" Height= "20" HorizontalAlignment="Left" Margin="60,30,0,0" VerticalAlignment="Top"/>
 
-     <Label Content="Balance: " HorizontalAlignment="Left" Margin="0,90,0,0" VerticalAlignment="Top"/>
+     <Label Content="Balance: " HorizontalAlignment="Left" Margin="0,60,0,0" VerticalAlignment="Top"/>
      <TextBox x:Name="BalanceTextBox" Width="200" Text="{Binding Balance}" Height= "20" HorizontalAlignment="Left" Margin="60,60,0,0" VerticalAlignment="Top"/>
+  
+     <Button x:Name ="BuscarButton" Margin="60,-285,0,0" Width = "60" Height = "25" Content=" Buscar" Click ="BuscarButton_Click"  />
+     <Image Source= "/Imagenes/Buscar.png" Width="20" Height= "20"/>  
 
-<!-- Boton Buscar-->
-    <Button x:Name ="BuscarButton" Margin=",0,0,0" Width = "100" Height = "40" Content=" Buscar" Click ="BuscarButton_Click"  />
-    <Image Source= "/Imagenes/Buscar.png" Width="20" Height= "20"/>     
-
-
-<!-- Boton Nuevo-->
-    <Button x:Name ="NuevoButton" Margin="120,60,0,0" Width = "100" Height = "40" Content=" Nuevo" Click ="NuevoButton_Click"  />
+    <Button x:Name ="NuevoButton" Margin="-220,-100,0,0" Width = "60" Height = "30" Content=" Nuevo" Click ="NuevoButton_Click"  />
     <Image Source= "/Imagenes/Nuevo.png" Width="20" Height= "20"/>  
 
-<!-- Boton Guardar-->
-    <Button x:Name ="GuardarButton" Margin="140,100,0,0" Width = "100" Height = "40" Content=" Guardar" Click ="GuardarButton_Click" />
+    <Button x:Name ="GuardarButton" Margin="-80,-100,0,0" Width = "60" Height = "30" Content=" Guardar" Click ="GuardarButton_Click"   />
     <Image Source= "/Imagenes/Guardar.png" Width="20" Height= "20"/>  
 
-<!-- Boton Eliminar-->
-    <Button x:Name ="EliminarButton" Margin="10,100,0,0" Width = "100" Height = "40" Content=" Eliminar" Click ="EliminarButton_Click" />
+    <Button x:Name ="EliminarButton" Margin="60,-100,0,0" Width = "60" Height = "30" Content=" Eliminar" Click ="EliminarButton_Click"  />
     <Image Source= "/Imagenes/Eliminar.png" Width="20" Height= "20"/>  
 
     </Grid>

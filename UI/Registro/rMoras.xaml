@@ -10,10 +10,12 @@
     
 		<StackPanel Orientation= "Vertical" Margin="10,10,10,10">
         <StackPanel Orientation= "Horizontal">
-    <!--CiudadID-->
+        
+    <!--moraID-->
         <Label Content= "MorasID" HorizontalAlignment="Left" />
         <TextBox x:Name= "MorasIDTextBox" Width="100" Text= "{Binding MorasID}" Height= "20" HorizontalAlignment= "Left"/>
-           
+         
+        
     <!--Boton Buscar-->
         <Button x:Name ="BuscarButton" Margin="10,0" Width = "70" Height = "30" >
              <StackPanel Orientation= "Horizontal">       
@@ -30,22 +32,53 @@
     <!--Valor-->
         <Label Content= "Valor"/>
         <TextBox x:Name= "ValorTextBox" Width="200" Text= "{Binding Valor}" Height= "20" HorizontalAlignment= "Left"/>
+ 
+  <!--Prestamo ID-->
+        <StackPanel Orientation="Vertical">
+            <Label Content="PrestamoID" HorizontalAlignment="Left" />
+            <ComboBox x:Name= "PrestamoIDComboBox" Width="200" Text= "{Binding PrestamoID}" Height= "20" HorizontalAlignment= "Left"/>
+        </StackPanel> 
 
-        <DataGrid x:Name= "DetalleDataGrid" Height= "100" AutoGenerateColumns="False" ItemsSource= "{Binding Detalle}" Margin="1,10,0,0">
+        <StackPanel Orientation= "Horizontal" Margin="220,5,5,5">
+    <!-- Boton Agregar-->
+        <Button x:Name ="AgregarButton"  Width = "80" Height = "30">
+        <StackPanel Orientation= "Horizontal">
+        <Image Source= "/Imagenes/Agregar.png" Width="20" Height= "20"/>  
+        <Label Content=" Agregar"/>
+        </StackPanel>
+        </Button>
+
+        <StackPanel Orientation= "Horizontal" Margin="10,0">
+         <!-- Boton Eliminar-->
+        <Button x:Name ="RemoverButton"  Width = "80" Height = "30">
+        <StackPanel Orientation= "Horizontal">
+        <Image Source= "/Imagenes/Remover.png" Width="20" Height= "20"/>  
+        <Label Content=" Remover"/>
+        </StackPanel>
+        </Button>
+
+        </StackPanel>   
+     </StackPanel>
+
+    <StackPanel Orientation= "Horizontal" Margin="0,0">
+        <DataGrid x:Name= "DetalleDataGrid"  Height= "80" Width="400"  AutoGenerateColumns="False" ItemsSource= "{Binding Detalle}">
           <DataGrid.Columns>
-            <DataGridTextColumn Header="PrestamoID" Binding="{Binding PrestamoID}"/>
-            <DataGridTextColumn Header="PersonaID" Binding="{Binding PersonaID}"/>
             <DataGridTextColumn Header="MoraID" Binding="{Binding MoraID}"/>
+            <DataGridTextColumn Header="PrestamoID" Binding="{Binding PrestamoID}"/>
+            <DataGridTextColumn Header="Nombres" Binding="{Binding Nombres}"/>
+            <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha}"/>
+            <DataGridTextColumn Header="Valor" Binding="{Binding Valor}"/>
           </DataGrid.Columns>
         </DataGrid>
+    </StackPanel>
 
     <!--total-->
-        <Label Content= "Total"/>
+        <Label Content= "Total" Margin="0,0"/>
         <TextBox x:Name= "TotalTextBox" Width="200" Text= "{Binding Total}" Height= "20" HorizontalAlignment= "Left"/>
 
 <StackPanel Orientation= "Horizontal" Margin="0,10">
     <!-- Boton Nuevo-->
-        <Button x:Name ="NuevoButton"  Width = "80" Height = "30" >
+        <Button x:Name ="NuevoButton"  Width = "80" Height = "30">
         <StackPanel Orientation= "Horizontal">
         <Image Source= "/Imagenes/Nuevo.png" Width="20" Height= "20"/>  
         <Label Content=" Nuevo"/>
@@ -53,7 +86,7 @@
         </Button>
 
     <!-- Boton Guardar-->
-        <Button x:Name ="GuardarButton" Margin="10,0" Width = "80" Height = "30" >
+        <Button x:Name ="GuardarButton" Margin="10,0" Width = "80" Height = "30" Click ="GuardarButton_Click">
         <StackPanel Orientation= "Horizontal">
         <Image Source= "/Imagenes/Guardar.png" Width="20" Height= "20"/> 
         <Label Content=" Guardar"/>
@@ -61,7 +94,7 @@
         </Button>   
 
     <!-- Boton Eliminar-->
-        <Button x:Name ="EliminarButton" Margin="0,0" Width = "80" Height = "30">
+        <Button x:Name ="EliminarButton" Margin="0,0" Width = "80" Height = "30" >
         <StackPanel Orientation= "Horizontal">
         <Image Source= "/Imagenes/Eliminar.png" Width="20" Height= "20"/>  
         <Label Content=" Eliminar"/>
