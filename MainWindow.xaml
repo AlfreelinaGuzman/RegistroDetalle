@@ -13,7 +13,7 @@
                 <MenuItem Header= "Registros" HorizontalAlignment="Left" Margin="80,0,0,0" VerticalAlignment="Top">
                     <MenuItem x:Name="Registrar_Persona" Header="Registrar Persona" Click= "RegistrarPersonas_Click"/>
                     <MenuItem x:Name="Registrar_Prestamo" Header="Registrar Prestamo" Click= "RegistrarPrestamo_Click"/>
-                    <MenuItem x:Name="Registrar_Moras" Header=" Registrar Mora" Click= "RegistrarMoras_Click" />
+                    <MenuItem x:Name="Registrar_Moras" Header="Registrar Mora" Click= "RegistrarMoras_Click" />
                     </MenuItem>
 
                 <MenuItem Header= "Consultas" HorizontalAlignment="Left" Margin="90,0,0,0" VerticalAlignment="Top">
