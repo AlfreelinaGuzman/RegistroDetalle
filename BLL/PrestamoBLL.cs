@@ -145,5 +145,24 @@ namespace RegistroDetalle.BLL{
             }
             return lista;
         }
+
+        public static List<Prestamo> GetList()
+        {
+            List<Prestamo> lista = new List<Prestamo>();
+            Contexto contexto = new Contexto();
+            try
+            {
+                lista = contexto.Prestamo.ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return lista;
+        }
     }
 }

@@ -28,7 +28,7 @@ namespace RegistroDetalle.UI.Registro
         public rMoras ()
         {
             InitializeComponent();
-         //   PrestamoIDComboBox.ItemsSource = PrestamoBLL.GetList();
+            PrestamoIDComboBox.ItemsSource = PrestamoBLL.GetList();
             PrestamoIDComboBox.SelectedValuePath = "PrestamoID";
             PrestamoIDComboBox.DisplayMemberPath = "PrestamoID";
             this.DataContext = moras;

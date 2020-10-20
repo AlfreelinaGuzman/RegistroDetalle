@@ -45,7 +45,7 @@ namespace RegistroDetalle
             ventana.Show();
         }
 
-         public void ConsultaPrestamos_Click(object render, RoutedEventArgs e)
+         public void ConsultarPrestamo_Click(object render, RoutedEventArgs e)
         {
             cPrestamo cPrestam = new cPrestamo();
             cPrestam.Show();

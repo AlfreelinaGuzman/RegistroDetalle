@@ -17,8 +17,8 @@
                     </MenuItem>
 
                 <MenuItem Header= "Consultas" HorizontalAlignment="Left" Margin="90,0,0,0" VerticalAlignment="Top">
-                 <!--   <MenuItem x:Name="Consultar_Persona" Header="Consultar Persona" Click="Consulta_Personas_Click"/>
-                //    <MenuItem x:Name="Consultar_Prestamo" Header="Consultar Prestamo" Click="ConsultaPrestamo_Click"/>-->
+                 <!--   <MenuItem x:Name="Consultar_Persona" Header="Consultar Persona" Click="Consulta_Personas_Click"/>-->
+                  <MenuItem x:Name="Consultar_Prestamo" Header="Consultar Prestamo" Click="ConsultarPrestamo_Click"/>
                 </MenuItem>
             </Menu>
         </StackPanel>    
