@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RegistroDetalle.Entidades{
     public class Moras{
-
+        [Key]
         public int MoraId { get; set; }
         public DateTime Fecha { get; set; }
         public decimal Total { get; set; }

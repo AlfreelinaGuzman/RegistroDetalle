@@ -24,7 +24,7 @@ namespace RegistroDetalle.UI.Registro
     {
        Moras moras = new Moras();
 
-      /*  public rMoras ()
+        public rMoras ()
         {
             InitializeComponent();
         
@@ -32,7 +32,6 @@ namespace RegistroDetalle.UI.Registro
            MorasIDTextBox.Text = "0";
         
         }
-
         private void Limpiar()
         {
             MorasIDTextBox.Text = "0";
@@ -42,15 +41,15 @@ namespace RegistroDetalle.UI.Registro
             Actualizar();
         }
 
-        private bool ExisteDB(){
-            moras= MorasBLL.Buscar =(Convert.ToInt32(MorasIDTextBox.Text));
-            return (moras != null);
-        }
-
-        private void Actualizar()
+           private void Actualizar()
         {
             this.DataContext = null;
             this.DataContext = moras;
+        }
+
+/*        private bool ExisteDB(){
+            moras= MorasBLL.Buscar =(Convert.ToInt32(MorasIDTextBox.Text));
+            return (moras != null);
         }
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)

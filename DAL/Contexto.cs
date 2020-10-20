@@ -14,16 +14,6 @@ namespace RegistroDetalle.DAL{
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
         optionsBuilder.UseSqlite(@"Data Source= DATA/Prestamo.db");
     }
-/*    protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
- 
-            modelBuilder.Entity<Articulos>().HasData(new Articulos() { ArticuloId = 1, Descripcion = "Jabon", Precio = 150 });            
-            modelBuilder.Entity<Articulos>().HasData(new Articulos() { ArticuloId = 2, Descripcion = "Habichuelas", Precio = 55 });            
-            modelBuilder.Entity<Articulos>().HasData(new Articulos() { ArticuloId = 3, Descripcion = "Salami", Precio = 60 });
-        }
-    }
-     
-*/
+    
  }   
 }
