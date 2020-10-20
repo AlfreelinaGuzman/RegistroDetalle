@@ -100,11 +100,11 @@ namespace RegistroDetalle.UI.Registro
         }
 
         private void AgregarButton_Click(object sender, RoutedEventArgs e){
-            moras.MorasDetalle.Add(new MorasDetalle(Convert.ToInt32(MorasIDTextBox.Text), Convert.ToInt32(PrestamoIDTextBox.Text),
-            Convert.ToInt32(ValorTextBox.Text)));
+     //       moras.MorasDetalle.Add(new MorasDetalle(Convert.ToInt32(MorasIDTextBox.Text), Convert.ToInt32(PrestamoIDTextBox.Text),
+         //   Convert.ToInt32(ValorTextBox.Text)));
 
-            MorasIDTextBox.Clear();
-            PrestamoIDTextBox.Clear();
+           // MorasIDTextBox.Clear();
+         //   PrestamoIDTextBox.Clear();
             ValorTextBox.Clear();
         }
 
