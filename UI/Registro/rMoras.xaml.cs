@@ -47,7 +47,7 @@ namespace RegistroDetalle.UI.Registro
             this.DataContext = moras;
         }
 
-/*        private bool ExisteDB(){
+        private bool ExisteDB(){
             moras= MorasBLL.Buscar =(Convert.ToInt32(MorasIDTextBox.Text));
             return (moras != null);
         }
@@ -98,6 +98,6 @@ namespace RegistroDetalle.UI.Registro
                 MessageBox.Show("No se encontro");
             }
         }
-*/
+
     }
     }

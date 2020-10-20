@@ -39,7 +39,7 @@
           </DataGrid.Columns>
         </DataGrid>
 
-    <!--Valor-->
+    <!--total-->
         <Label Content= "Total"/>
         <TextBox x:Name= "TotalTextBox" Width="200" Text= "{Binding Total}" Height= "20" HorizontalAlignment= "Left"/>
 
