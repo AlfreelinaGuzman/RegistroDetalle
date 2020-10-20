@@ -13,27 +13,15 @@ namespace RegistroDetalle.BLL
     public class MorasBLL
     {
 
-        public static bool Guardar(Moras moras){
-            bool paso = false;
-            Contexto contexto = new Contexto();
-
-            try
-            {
-                if(contexto.Moras.Add(moras)!= null)
-                paso = contexto.SaveChanges()>0;
-            }
-            catch(Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                contexto.Dispose();
-            }
-            return paso;
+        public static bool Guardar(Moras mora)
+        {
+            if (!Existe(mora.MoraId))
+                return Insertar(mora);
+            else
+                return Modificar(mora);
         }
 
-       private static bool Existe(int id)
+        private static bool Existe(int id)
         {
             bool existe;
             Contexto contexto = new Contexto();
@@ -48,8 +36,38 @@ namespace RegistroDetalle.BLL
             }
             return existe;
         }
-      
-       public static bool Modificar(Moras moras){
+        private static bool Insertar(Moras mora)
+        {
+            bool paso = false;
+            Contexto contexto = new Contexto();
+            try
+            {
+                contexto.Moras.Add(mora);
+                paso = contexto.SaveChanges() > 0;
+
+                List<MorasDetalle> detalle = mora.MorasDetalle;
+                foreach (MorasDetalle det in detalle)
+                {
+                    Prestamo prestamo = PrestamoBLL.Buscar(det.PrestamoId);
+                    if (prestamo != null)
+                    {
+                        prestamo.Mora += Convert.ToSingle(det.Valor);
+                        PrestamoBLL.Guardar(prestamo);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return paso;
+        }
+
+        public static bool Modificar(Moras moras){
             bool Modificado = false;
             Contexto contexto = new Contexto();
             try{

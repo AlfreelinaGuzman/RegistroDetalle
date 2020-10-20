@@ -1,7 +1,7 @@
 using System;
 using  System.ComponentModel.DataAnnotations;
 
-namespace Detalle_Registro.Entidades{
+namespace RegistroDetalle.Entidades{
     public class MorasDetalle{
         [Key]
         public int Id { get; set; }

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using RegistroDetalle.Entidades;
 using RegistroDetalle.BLL;
+using RegistroDetalle.DAL;
 
 namespace RegistroDetalle.UI.Registro
 {
@@ -27,8 +28,10 @@ namespace RegistroDetalle.UI.Registro
         public rMoras ()
         {
             InitializeComponent();
-        
-           this.DataContext = moras;
+         //   PrestamoIDComboBox.ItemsSource = PrestamoBLL.GetList();
+            PrestamoIDComboBox.SelectedValuePath = "PrestamoID";
+            PrestamoIDComboBox.DisplayMemberPath = "PrestamoID";
+            this.DataContext = moras;
            MorasIDTextBox.Text = "0";
         
         }
@@ -55,20 +58,32 @@ namespace RegistroDetalle.UI.Registro
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
             bool paso = false;
-            if (string.IsNullOrWhiteSpace(MorasIDTextBox.Text) || MorasIDTextBox.Text == "0")
-                paso = MorasBLL.Guardar(moras);
-            else 
+
+            if (moras.MoraId == 0)
             {
-                if(!ExisteDB())
+                paso = MorasBLL.Guardar(moras);
+            }
+            else
+            {
+                if (Existe())
                 {
-                    MessageBox.Show("No se puede modificar porque no existe");
-                    return;
+                    paso = MorasBLL.Guardar(moras);
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo guardar!");
+                    MessageBox.Show("No existe en la base de datos", "Error");
                 }
             }
+
+            if (paso)
+            {
+                Limpiar();
+                MessageBox.Show("Guardado!", "Exito",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+                MessageBox.Show("Fallo al guardar", "Fallo",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
@@ -99,20 +114,35 @@ namespace RegistroDetalle.UI.Registro
             }
         }
 
-        private void AgregarButton_Click(object sender, RoutedEventArgs e){
-     //       moras.MorasDetalle.Add(new MorasDetalle(Convert.ToInt32(MorasIDTextBox.Text), Convert.ToInt32(PrestamoIDTextBox.Text),
-         //   Convert.ToInt32(ValorTextBox.Text)));
+        private void AgregarBoton_Click(object sender, RoutedEventArgs e)
+        {
+            Contexto context = new Contexto();
+            moras.Total += Convert.ToDecimal(ValorTextBox.Text);
+            moras.MorasDetalle.Add(new MorasDetalle(moras.MoraId, Convert.ToInt32(PrestamoIDComboBox.SelectedValue), Convert.ToDecimal(ValorTextBox.Text)));
+            
 
-           // MorasIDTextBox.Clear();
-         //   PrestamoIDTextBox.Clear();
+            this.DataContext = null;
+            this.DataContext = moras;
+
             ValorTextBox.Clear();
         }
 
-        private void RemoverButton_Click(object sender, RoutedEventArgs e)
+        private void RemoverBoton_Click(object sender, RoutedEventArgs e)
         {
-            moras.MorasDetalle.RemoveAt(DetalleDataGrid.FrozenColumnCount);
-            Actualizar();
+            if (DetalleDataGrid.Items.Count >= 1 && DetalleDataGrid.SelectedIndex <= DetalleDataGrid.Items.Count - 1)
+            {
+                MorasDetalle mora = (MorasDetalle)DetalleDataGrid.SelectedValue;
+                moras.Total -= mora.Valor;
+                moras.MorasDetalle.RemoveAt(DetalleDataGrid.SelectedIndex);
+                this.DataContext = null;
+                this.DataContext = moras;
+            }
         }
+        private bool Existe()
+        {
+            Moras esValido = MorasBLL.Buscar(moras.MoraId);
 
+            return (esValido != null);
+        }
     }
     }

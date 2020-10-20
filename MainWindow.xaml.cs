@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using RegistroDetalle.UI.Registro;
+using RegistroDetalle.UI.Consultas;
 
 namespace RegistroDetalle
 {
@@ -36,13 +37,19 @@ namespace RegistroDetalle
             rPrestamo ventana = new rPrestamo();
             ventana.Show();
         }
+
        
           private void RegistrarMoras_Click(object sender, RoutedEventArgs e)
         {
             rMoras ventana = new rMoras();
             ventana.Show();
         }
+
+         public void ConsultaPrestamos_Click(object render, RoutedEventArgs e)
+        {
+            cPrestamo cPrestam = new cPrestamo();
+            cPrestam.Show();
+        }
     }
 
-            
-}
+    }

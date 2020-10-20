@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegistroDetalle.UI.Registro"
         mc:Ignorable="d"
-        Title="Registro de Moras" Height="450" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        Title="Registro de Moras" Height="557" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
 	<Grid>
     
 		<StackPanel Orientation= "Vertical" Margin="10,10,10,10">
@@ -36,12 +36,12 @@
   <!--Prestamo ID-->
         <StackPanel Orientation="Vertical">
             <Label Content="PrestamoID" HorizontalAlignment="Left" />
-            <ComboBox x:Name= "PrestamoIDComboBox" Width="200" Text= "{Binding PrestamoID}" Height= "20" HorizontalAlignment= "Left"/>
+            <ComboBox x:Name= "PrestamoIDComboBox" Width="200" Height= "20" HorizontalAlignment= "Left" />
         </StackPanel> 
 
         <StackPanel Orientation= "Horizontal" Margin="220,5,5,5">
     <!-- Boton Agregar-->
-        <Button x:Name ="AgregarButton"  Width = "80" Height = "30">
+        <Button x:Name ="AgregarButton"  Width = "80" Height = "30" Click = "AgregarBoton_Click">
         <StackPanel Orientation= "Horizontal">
         <Image Source= "/Imagenes/Agregar.png" Width="20" Height= "20"/>  
         <Label Content=" Agregar"/>
@@ -50,7 +50,7 @@
 
         <StackPanel Orientation= "Horizontal" Margin="10,0">
          <!-- Boton Eliminar-->
-        <Button x:Name ="RemoverButton"  Width = "80" Height = "30">
+        <Button x:Name ="RemoverButton"  Width = "80" Height = "30" Click = "RemoverBoton_Click">
         <StackPanel Orientation= "Horizontal">
         <Image Source= "/Imagenes/Remover.png" Width="20" Height= "20"/>  
         <Label Content=" Remover"/>
@@ -61,15 +61,12 @@
      </StackPanel>
 
     <StackPanel Orientation= "Horizontal" Margin="0,0">
-        <DataGrid x:Name= "DetalleDataGrid"  Height= "80" Width="400"  AutoGenerateColumns="False" ItemsSource= "{Binding Detalle}">
-          <DataGrid.Columns>
-            <DataGridTextColumn Header="MoraID" Binding="{Binding MoraID}"/>
-            <DataGridTextColumn Header="PrestamoID" Binding="{Binding PrestamoID}"/>
-            <DataGridTextColumn Header="Nombres" Binding="{Binding Nombres}"/>
-            <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha}"/>
-            <DataGridTextColumn Header="Valor" Binding="{Binding Valor}"/>
-          </DataGrid.Columns>
-        </DataGrid>
+                <DataGrid x:Name="DetalleDataGrid" Height="165" ItemsSource="{Binding MorasDetalle}" AutoGenerateColumns="False" Width="418"  IsReadOnly="True" Margin="0,0,120,0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn x:Name="ClienteDataGridTextColum" Header="Cliente" />
+                        <DataGridTextColumn Header="Valor" Binding="{Binding Valor}"/>
+                    </DataGrid.Columns>
+                </DataGrid> 
     </StackPanel>
 
     <!--total-->
